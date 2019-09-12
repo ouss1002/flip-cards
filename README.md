@@ -1,20 +1,39 @@
 # Memory Game Project
 
-## Table of Contents
+# Flip Cards
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+*Flip Cards* is a game developed for *Udacity*.
 
-## Instructions
+## How to Play!
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+  - Launch `index.html` in your favourite browser
+  - Enjoy !
 
-To get started, open `js/app.js` and start building out the app's functionality
+## How to Win!
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+### Time
 
-## Contributing
+The game tracks the time spent using a timer, it stops when the player matches all the cards in the table.
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+### Stars
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+The player starts with 3 whole **Stars**, he loses a **Star** after making 12 and 15 moves.
+
+### Congratz
+
+After matching all cards, a modal appears which shows the time spent to win the game, the number of stars achieved and the number of moves exhausted.
+
+## Additional Content
+
+### Restart
+
+* by clicking the **reset** button, the game restarts.
+
+### winGame()
+
+* is a function intended for development purposes, you can use it to test winning features, etc. without having to go through the gameplay
+* Just call the function in the javascript console
+
+### Game Sounds
+
+* The game has sound effects (on success and failure while matching cards).
