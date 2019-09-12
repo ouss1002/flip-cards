@@ -1,0 +1,258 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    /* I put the transition here so it can happen twice
+    (after clicking and after returning to its 
+    original state) */
+    transition: transform 0.2s ease 0s;
+}
+
+.deck .card.open {
+    /* I wanted the transform to perform 
+    a 360 in all directions */
+    transform: rotate3d(1, 1, 1, 360deg);
+    background-color: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    /* I kept the color blue for transition purposes, 
+    I changed the color to green in the .done class
+    defined below */
+    background-color: #02b3e4;
+    font-size: 33px;
+}
+
+/* i felt like I needed an additional class.
+Seriously,  it took me 3 days to sync between 
+transitions and transforms for all classes 
+and changing the javascript program every 
+time I wanted to test something... only to 
+find out I missed something somewhere, 
+DAAAAMN THESE TRANSITIONS AND TRANSFORMS
+I got obsessed with these utilities though :D */
+.deck .card.match.done {
+    transform: rotateZ(360deg) !important;
+    background-color: #02ccba;
+    transition: background-color 0s 0s, transform 0.5s ease 0s !important;
+}
+
+/* this is the class assigned to the cards 
+when they are not matched */
+.error {
+    background-color: red !important;
+    transition: background-color 0s ease 0s !important;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+/* i added {#modal-stars} to apply the 
+same rule to the stars in the modal */
+.score-panel .stars, 
+#modal-stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+/* i added {#modal-stars li} to apply the 
+same rule to the stars in the modal */
+.score-panel .stars li, 
+#modal-stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+/* an additional selector I needed */
+.bld {
+    font-weight: bold;
+}
+
+/* this class helped me create the transition
+effect on the opacity of the content of the modal */
+.old {
+    opacity: 0;
+    visibility: 0;
+
+    transition: opacity 1s 0s;
+}
+
+/* this is for the modal */
+/* i actually learned about modals 
+from this link here 
+https://sabe.io/tutorials/how-to-create-modal-popup-box
+i modified some of its declarations to adapt to my needs. 
+Now i don't know if this is considered Plagiarism, 
+ */
+.modal {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.2);
+    transition: visibility 0s linear 3s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* the content of the modal */
+.modal-content {
+    z-index: 1;
+    background-color: #a5bcc4;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1em 1.5em;
+    width: 80%;
+    height: 80%;
+    border-radius: 1em;
+}
+
+/* when the modal is shown (not hidden) */
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 1s 0s, transform 0.25s;
+}
+
+/* this is for the 'congratulations' title */
+.modal-title {
+    color: #02ccba;
+    font-size: 5em;
+    visibility: inherit;
+    transition: opacity 1s 1s, visibility 1s 0s;
+}
+
+/* this is for the text about statistics in the modal */
+.modal-text {
+    color: #0c6860;
+    font-size: 2em;
+    padding: 5% 15% 5% 15%;
+    transition: opacity 1s 1.5s, visibility 1.5s 0s;
+}
+
+/* i had to change the left padding for the stars of the modal */
+#modal-stars .stars {
+    padding-left: 0 !important;
+}
+
+/* the buttons of the modal */
+.button {
+    cursor: pointer;
+    background-color: #02ccba; /* Greenish Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border-radius: 1em;
+    margin-left: 5%;
+    margin-right: 5%;
+    transition: visibility 0s 1.5s, opacity 1s 2s;
+}
+
+/* trying to centralize the position 
+of the timer in the score panel */
+.timer {
+    margin-left: 20%;
+}
+
+/* i had to fix the moves counter to keep the elements 
+of the score panel in a fixed position */
+.moves {
+    width: 1em;
+    display: inline-block;
+}
+
+/* the sound class, i didn't want to put it 
+'display: none' as an HTML atrribute */
+.sound {
+    display: none;
+}
