@@ -324,7 +324,6 @@ function checkMatch(){
 
 			// conditional statement here was used to fix the 
 			// singular - plural issue with the word 'star'
-			// (I guess you missed it in the 3rd video of the 'Project Overview' xD) 
 			modal.querySelector('#star-sing-plur').innerHTML = numStars > 1 ? 'Stars' : 'Star';
 
 			// we copy the DOMElement of the stars and paste it directly in our modal

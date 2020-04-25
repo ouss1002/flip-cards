@@ -70,7 +70,7 @@ h1 {
 }
 
 .deck .card.open {
-    /* I wanted the transform to perform 
+    /* wanted the transform to perform 
     a 360 in all directions */
     transform: rotate3d(1, 1, 1, 360deg);
     background-color: #02b3e4;
@@ -83,21 +83,13 @@ h1 {
 
 .deck .card.match {
     cursor: default;
-    /* I kept the color blue for transition purposes, 
-    I changed the color to green in the .done class
+    /* kept the color blue for transition purposes, 
+    changed the color to green in the .done class
     defined below */
     background-color: #02b3e4;
     font-size: 33px;
 }
 
-/* i felt like I needed an additional class.
-Seriously,  it took me 3 days to sync between 
-transitions and transforms for all classes 
-and changing the javascript program every 
-time I wanted to test something... only to 
-find out I missed something somewhere, 
-DAAAAMN THESE TRANSITIONS AND TRANSFORMS
-I got obsessed with these utilities though :D */
 .deck .card.match.done {
     transform: rotateZ(360deg) !important;
     background-color: #02ccba;
@@ -121,7 +113,7 @@ when they are not matched */
     margin-bottom: 10px;
 }
 
-/* i added {#modal-stars} to apply the 
+/* added {#modal-stars} to apply the 
 same rule to the stars in the modal */
 .score-panel .stars, 
 #modal-stars {
@@ -131,7 +123,7 @@ same rule to the stars in the modal */
     margin: 0 5px 0 0;
 }
 
-/* i added {#modal-stars li} to apply the 
+/* added {#modal-stars li} to apply the 
 same rule to the stars in the modal */
 .score-panel .stars li, 
 #modal-stars li {
@@ -149,7 +141,7 @@ same rule to the stars in the modal */
     font-weight: bold;
 }
 
-/* this class helped me create the transition
+/* class made to create the transition
 effect on the opacity of the content of the modal */
 .old {
     opacity: 0;
@@ -159,12 +151,6 @@ effect on the opacity of the content of the modal */
 }
 
 /* this is for the modal */
-/* i actually learned about modals 
-from this link here 
-https://sabe.io/tutorials/how-to-create-modal-popup-box
-i modified some of its declarations to adapt to my needs. 
-Now i don't know if this is considered Plagiarism :/
- */
 .modal {
     z-index: 1;
     position: fixed;

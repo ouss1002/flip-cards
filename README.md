@@ -2,7 +2,7 @@
 
 # Flip Cards
 
-*Flip Cards* is a game developed for *Udacity*.
+*Flip Cards* is a shitty game with good graphics.
 
 ## How to Play!
 
