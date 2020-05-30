@@ -3,6 +3,7 @@
 # Flip Cards
 
 *Flip Cards* is a shitty game with good graphics.
+Try the game on [Netlify](https://hopeful-albattani-abca47.netlify.app/)
 
 ## How to Play!
 
