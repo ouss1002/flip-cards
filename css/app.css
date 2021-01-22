@@ -224,21 +224,15 @@ effect on the opacity of the content of the modal */
     transition: visibility 0s 1.5s, opacity 1s 2s;
 }
 
-/* trying to centralize the position 
-of the timer in the score panel */
 .timer {
     margin-left: 20%;
 }
 
-/* i had to fix the moves counter to keep the elements 
-of the score panel in a fixed position */
 .moves {
     width: 1em;
     display: inline-block;
 }
 
-/* the sound class, i didn't want to put it 
-'display: none' as an HTML atrribute */
 .sound {
     display: none;
 }
