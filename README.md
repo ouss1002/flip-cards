@@ -1,12 +1,13 @@
-# Memory Game Project
+# Memory Card Game 
 
 # Flip Cards
 
-*Flip Cards* is a shitty game with good graphics.  
+*Flip Cards* is a simple game with good graphics.  
 Try the game on [Netlify](https://hopeful-albattani-abca47.netlify.app/).  
 
 ## How to Play!
 
+  - Clone the repo `git clone https://github.com/ouss1002/memory-card-game`
   - Launch `index.html` in your favourite browser
   - Enjoy !
 
