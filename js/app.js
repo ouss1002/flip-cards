@@ -452,11 +452,6 @@ function startNewGame(){
 	startGame();
 }
 
-// the Sound object... I did some Object Oriented Programming with java, 
-// I just had to google some things to put everything to work. I found 
-// the OOP part in a later chapter and i'm looking forward to it <3
-// This link helped me figure it out: 
-// https://www.w3schools.com/graphics/game_sound.asp
 function Sound(src){
 	// it only happens once
 
